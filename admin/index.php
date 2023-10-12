@@ -77,10 +77,7 @@
 
                     
                         insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm);
-                        $thongbao = "Them thanh cong";
-                    
-                        
-                    
+                        $thongbao = "Them thanh cong";   
                 }
                 $listdanhmuc = loadall_danhmuc();
                 //var_dump($listdanhmuc);
@@ -167,8 +164,6 @@
                         include "binhluan/list.php";
                         break;
                               
-
-           
             default:
                 include "home.php";
             break;
