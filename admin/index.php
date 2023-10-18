@@ -4,6 +4,7 @@
     include "../model/sanpham.php";
     include "../model/taikhoan.php";
     include "../model/binhluan.php";
+    include "../model/cart.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -77,7 +78,10 @@
 
                     
                         insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm);
-                        $thongbao = "Them thanh cong";   
+                        $thongbao = "Them thanh cong";
+                    
+                        
+                    
                 }
                 $listdanhmuc = loadall_danhmuc();
                 //var_dump($listdanhmuc);
@@ -163,7 +167,16 @@
                         $listbinhluan = loadall_binhluan(0);
                         include "binhluan/list.php";
                         break;
-                              
+            case 'thongke':
+                
+                $listthongke = loadall_thongke();
+                include 'thongke/list.php';
+                break;
+            case 'bieudo':
+                $listthongke =loadall_thongke();
+                include 'thongke/bieudo.php';
+                break;
+           
             default:
                 include "home.php";
             break;
